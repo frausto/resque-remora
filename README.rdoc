@@ -1,6 +1,37 @@
-= resque-remora
+= Resque Remora
 
-Description goes here.
+Resque Remora is a plugin for the Resque queueing system (http://github.com/defunkt/resque) that allows you to attach a hash with whatever information you want to resque jobs when they are enqueued (much like how a remora attached to a shark... perhaps), and then to get that information back and process it whenever the job is taken off the queue. The hash is attached directly to the job so it can be viewed in Redis with the jobs other information. 
+
+== Usage
+
+When creating your jobs you should extend Resque::Plugins::Remora and implement the methods to generate the attachable hash and to process it afterwords.
+
+For Example:
+	
+  class Job
+    extend Resque::Plugins::Remora
+
+    def attach_remora
+      {:time => Time.now.to_i, :cool_information => "information"}
+    end
+
+    def process_remora(queue, information)
+      #do whatever I want with this information
+    end
+    
+    #rest of your Job class here
+  end
+
+=== Remora required methods
+
+<b>attach_remora</b>:: returns the hash that you want to be attached to jobs to retrieve later. Hash is generated every time a job is enqueued and put into Redis.
+
+<b>process_remora</b>:: this is called after the job gets popped off the Redis queue, the arguments it gets are the queue name and the information which is whatever hash was attached to the job from the attach_remora method. Of note is the fact that the hash keys will be strings no matter what you passed them in as.
+
+== Requirements
+
+* resque-remora requires resque ~> 1.10. 
+* resque-remora may be incompatible with gems that modify resque's push/pop functionality.
 
 == Contributing to resque-remora
  

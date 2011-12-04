@@ -1,5 +1,7 @@
 # rcov generated
 coverage
+.rvmrc
+Gemfile.lock
 
 # rdoc generated
 rdoc

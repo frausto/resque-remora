@@ -1,7 +1,9 @@
 # encoding: utf-8
+$LOAD_PATH.unshift 'lib'
 
 require 'rubygems'
 require 'bundler'
+require 'resque/tasks'
 begin
   Bundler.setup(:default, :development)
 rescue Bundler::BundlerError => e
@@ -17,8 +19,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "resque-remora"
   gem.homepage = "http://github.com/frausto/resque-remora"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{TODO: gem that allows you to attach information and retreive it from a resque job}
+  gem.description = %Q{TODO: allows you to attach information when a job is put in redis, and to perform a after_pop hook when it is popped off the resque queue}
   gem.email = "nrfrausto@gmail.com"
   gem.authors = ["nolan frausto"]
   # dependencies defined in Gemfile
