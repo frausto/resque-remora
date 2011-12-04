@@ -12,7 +12,7 @@ describe Resque::Plugins::Remora::PushPop do
     it "should add the remora information to the end of the job" do
       TestJob.stub(:remora_attachment => {:remora => {:time => @now, :olah => "oh hai!"}})
       Resque.enqueue(TestJob, "arg1")
-      Resque.redis.lindex("queue:test",0).should =~ /^\{.*\"remora\":\{\"olah\":\"oh hai!\",\"time\":\"#{@now}\"\}/
+      Resque.redis.lindex("queue:test",0).should =~ /^\{.*\"remora\":(\{\"olah\":\"oh hai!\",\"time\":\"#{@now}\"\}||\{\"time\":\"#{@now}\",\"olah\":\"oh hai!\"\})/
     end
   end
   
