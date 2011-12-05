@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = [%q{nolan frausto}]
   s.date = %q{2011-12-05}
-  s.description = %q{TODO: allows you to attach information when a job is put in redis, and to do whatever you want with the information when it is popped off the resque queue}
+  s.description = %q{resque plugin that allows you to attach information when a job is put in redis, and to do whatever you want with the information when it is popped off the resque queue}
   s.email = %q{nrfrausto@gmail.com}
   s.extra_rdoc_files = [
     "LICENSE.txt",
@@ -27,6 +27,7 @@ Gem::Specification.new do |s|
     "lib/resque-remora.rb",
     "lib/resque/plugins/remora.rb",
     "lib/resque/plugins/remora/push_pop.rb",
+    "resque-remora.gemspec",
     "spec/redis-test.conf",
     "spec/resque/plugins/remora/push_pop_spec.rb",
     "spec/resque/plugins/remora_spec.rb",
@@ -37,7 +38,7 @@ Gem::Specification.new do |s|
   s.licenses = [%q{MIT}]
   s.require_paths = [%q{lib}]
   s.rubygems_version = %q{1.8.6}
-  s.summary = %q{TODO: resque plugin that allows you to attach information to a resque job and retrieve it when it gets popped of the queue}
+  s.summary = %q{resque plugin that allows you to attach information to a resque job and retrieve it when it gets popped of the queue}
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
