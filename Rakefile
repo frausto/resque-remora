@@ -19,8 +19,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "resque-remora"
   gem.homepage = "http://github.com/frausto/resque-remora"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: gem that allows you to attach information and retreive it from a resque job}
-  gem.description = %Q{TODO: allows you to attach information when a job is put in redis, and to perform a after_pop hook when it is popped off the resque queue}
+  gem.summary = %Q{TODO: resque plugin that allows you to attach information to a resque job and retrieve it when it gets popped of the queue}
+  gem.description = %Q{TODO: allows you to attach information when a job is put in redis, and to do whatever you want with the information when it is popped off the resque queue}
   gem.email = "nrfrausto@gmail.com"
   gem.authors = ["nolan frausto"]
   # dependencies defined in Gemfile
