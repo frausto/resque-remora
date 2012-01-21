@@ -1,6 +1,6 @@
 = Resque Remora
 
-Resque Remora is a plugin for the Resque queueing system (http://github.com/defunkt/resque) that allows you to attach a hash with whatever information you want to resque jobs when they are enqueued (much like how a remora attaches to a shark... perhaps.), and then to get that information back and process it whenever the job is taken off the queue. Also of note is that the hash is attached directly to the job so it can be viewed in Redis when looking at queued jobs. 
+Resque Remora is a plugin for the Resque queueing system (http://github.com/defunkt/resque) that allows you to add information to the payload of each enqueued job. It allows you to attach a hash with whatever information you want to resque jobs when they are enqueued (much like how a remora attaches to a shark... perhaps.), and then to get that information back and process it whenever the job is taken off the queue. Also of note is that the hash is attached directly to the job so it can be viewed in Redis when looking at queued jobs. 
 
 == Usage
 
@@ -16,7 +16,9 @@ For Example:
     end
 
     def process_remora(queue, attachment)
-      #do whatever I want with this hash attachment
+      #do whatever I want with this hash attachment.
+      #For example:
+      #time_in_queue = Time.now - attachment[:time]
     end
     
     #rest of your Job class here
