@@ -18,7 +18,8 @@ For Example:
     def process_remora(queue, attachment)
       #do whatever I want with this hash attachment.
       #For example:
-      #time_in_queue = Time.now - attachment['time']
+      #time_started = attachment['time'].to_i
+      #time_in_queue = Time.now - Time.at(time_started)
     end
     
     #rest of your Job class here
