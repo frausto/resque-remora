@@ -2,6 +2,7 @@
 coverage
 .rvmrc
 Gemfile.lock
+.rbx
 
 # rdoc generated
 rdoc
