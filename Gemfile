@@ -7,6 +7,6 @@ group :development do
   gem "bundler"
   gem "jeweler", "~> 1.6.4"
   gem "simplecov", ">= 0"
-  gem "yajl-ruby", "~>0.8.2", :platforms => :mri
+  gem "yajl-ruby", "~>1.2", :platforms => :mri
   gem "json", "~>1.5.3", :platforms => :jruby
 end

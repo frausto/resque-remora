@@ -24,10 +24,14 @@ dir = File.dirname(__FILE__)
 #
 
 at_exit do
-  pid = `ps -e -o pid,command | grep [r]edis-test`.split(" ")[0]
-  puts "Killing test redis server [#{pid}]..."
   `rm -f #{dir}/dump.rdb`
-  Process.kill("KILL", pid.to_i)
+  pid = `ps -e -o pid,command | grep [r]edis.*9736`.split(" ")[0]
+  if pid.to_i >= 100
+    puts "Killing test redis server [#{pid}]..."
+    Process.kill("KILL", pid.to_i)
+  else
+    puts "Found #{pid} for resque-server that is probably not resque, so not killing it."
+  end
 end
 
 puts "Starting redis for testing at localhost:9736..."
