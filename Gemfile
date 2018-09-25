@@ -3,7 +3,7 @@ source "http://rubygems.org"
 gem 'resque', "~> 1.10"
 
 group :development do
-  gem "rspec", "~> 2.10.0"
+  gem "rspec"
   gem "bundler"
   gem "jeweler", "~> 1.6.4"
   gem "simplecov", ">= 0"
