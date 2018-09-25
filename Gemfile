@@ -5,7 +5,7 @@ gem 'resque', "~> 1.10"
 group :development do
   gem "rspec"
   gem "bundler"
-  gem "jeweler", "~> 1.6.4"
+  gem "jeweler"
   gem "simplecov", ">= 0"
   gem "yajl-ruby", "~>1.2", :platforms => :mri
   gem "json", "~>1.5.3", :platforms => :jruby
