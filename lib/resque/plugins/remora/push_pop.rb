@@ -30,12 +30,6 @@ module Resque
             job
           end
 
-          private
-
-          def remora_class?(job_class)
-            job_class && job_class.respond_to?(:process_remora) && job_class.respond_to?(:attach_remora) && job_class.respond_to?(:remora_attachment)
-          end
-
           # From file activesupport/lib/active_support/inflector/methods.rb, line 226
           def constantize(camel_cased_word)
             names = camel_cased_word.split('::')
@@ -66,6 +60,12 @@ module Resque
                 constant.const_get(name, false)
               end
             end
+          end
+
+          private
+
+          def remora_class?(job_class)
+            job_class && job_class.respond_to?(:process_remora) && job_class.respond_to?(:attach_remora) && job_class.respond_to?(:remora_attachment)
           end
         end
       end
