@@ -30,6 +30,15 @@ module Resque
             job
           end
 
+          # NOTE:
+          # Prior to Resque 1.26, Resque.constantize was not defined.  For
+          # 1.26 and after, overriding Resque.constantize causes compatibility
+          # issues.  So, for Resque < 1.26 we want to define a constantize
+          # method here.  For Resque >= 1.26 we do not.
+          def constantize(camel_cased_word)
+            defined?(super) ? super(camel_cased_word) : _constantize(camel_cased_word)
+          end
+
           private
 
           def remora_class?(job_class)
@@ -37,7 +46,7 @@ module Resque
           end
 
           # From file activesupport/lib/active_support/inflector/methods.rb, line 226
-          def constantize(camel_cased_word)
+          def _constantize(camel_cased_word)
             names = camel_cased_word.split('::')
 
             # Trigger a builtin NameError exception including the ill-formed constant in the message.
