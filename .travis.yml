@@ -1,5 +1,4 @@
 language: ruby
-dist: trusty
 rvm:
   - 1.9
   - 2.0
@@ -11,14 +10,8 @@ rvm:
   - 2.6
   - 2.7
   - ruby-head
-  - jruby-head
-  - jruby-1.7
-  - jruby-9.0
   - jruby-9.1
   - jruby-9.2
+  - jruby-head
   - jruby-18mode # JRuby in 1.8 mode
   - jruby-19mode # JRuby in 1.9 mode
-  - rbx-19mode
-  - rbx-2
-  - rbx-3
-  - rbx-4
