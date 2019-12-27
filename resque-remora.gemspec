@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0".freeze) if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib".freeze]
   s.authors = ["nolan frausto".freeze]
-  s.date = "2018-10-12"
+  s.date = "2019-12-27"
   s.description = "resque plugin that allows you to attach information when a job is put in redis, and to do whatever you want with the information when it is popped off the resque queue".freeze
   s.email = "nrfrausto@gmail.com".freeze
   s.extra_rdoc_files = [
@@ -46,7 +46,7 @@ Gem::Specification.new do |s|
     s.specification_version = 4
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<resque>.freeze, ["~> 1.10"])
+      s.add_runtime_dependency(%q<resque>.freeze, ["< 3.0", ">= 1.10"])
       s.add_development_dependency(%q<rspec>.freeze, [">= 0"])
       s.add_development_dependency(%q<bundler>.freeze, [">= 0"])
       s.add_development_dependency(%q<jeweler>.freeze, [">= 0"])
@@ -54,7 +54,7 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<yajl-ruby>.freeze, ["~> 1.2"])
       s.add_development_dependency(%q<json>.freeze, ["~> 1.5.3"])
     else
-      s.add_dependency(%q<resque>.freeze, ["~> 1.10"])
+      s.add_dependency(%q<resque>.freeze, ["< 3.0", ">= 1.10"])
       s.add_dependency(%q<rspec>.freeze, [">= 0"])
       s.add_dependency(%q<bundler>.freeze, [">= 0"])
       s.add_dependency(%q<jeweler>.freeze, [">= 0"])
@@ -63,7 +63,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<json>.freeze, ["~> 1.5.3"])
     end
   else
-    s.add_dependency(%q<resque>.freeze, ["~> 1.10"])
+    s.add_dependency(%q<resque>.freeze, ["< 3.0", ">= 1.10"])
     s.add_dependency(%q<rspec>.freeze, [">= 0"])
     s.add_dependency(%q<bundler>.freeze, [">= 0"])
     s.add_dependency(%q<jeweler>.freeze, [">= 0"])
