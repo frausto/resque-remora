@@ -46,7 +46,7 @@ Gem::Specification.new do |s|
     s.specification_version = 4
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<resque>.freeze, ["~> 1.10"])
+      s.add_runtime_dependency(%q<resque>.freeze, [">= 1.10", "< 3.0"])
       s.add_development_dependency(%q<rspec>.freeze, [">= 0"])
       s.add_development_dependency(%q<bundler>.freeze, [">= 0"])
       s.add_development_dependency(%q<jeweler>.freeze, [">= 0"])
@@ -54,7 +54,7 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<yajl-ruby>.freeze, ["~> 1.2"])
       s.add_development_dependency(%q<json>.freeze, ["~> 1.5.3"])
     else
-      s.add_dependency(%q<resque>.freeze, ["~> 1.10"])
+      s.add_dependency(%q<resque>.freeze, [">= 1.10", "< 3.0"])
       s.add_dependency(%q<rspec>.freeze, [">= 0"])
       s.add_dependency(%q<bundler>.freeze, [">= 0"])
       s.add_dependency(%q<jeweler>.freeze, [">= 0"])
@@ -63,7 +63,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<json>.freeze, ["~> 1.5.3"])
     end
   else
-    s.add_dependency(%q<resque>.freeze, ["~> 1.10"])
+    s.add_dependency(%q<resque>.freeze, [">= 1.10", "< 3.0"])
     s.add_dependency(%q<rspec>.freeze, [">= 0"])
     s.add_dependency(%q<bundler>.freeze, [">= 0"])
     s.add_dependency(%q<jeweler>.freeze, [">= 0"])
