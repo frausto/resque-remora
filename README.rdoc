@@ -33,7 +33,7 @@ For Example:
 
 == Requirements
 
-* resque-remora requires resque ~> 1.10. 
+* resque-remora requires resque ">=" 1.10" and "< 3.0"
 * resque-remora may be incompatible with gems that modify resque's push/pop functionality.
 
 == Contributing to resque-remora
